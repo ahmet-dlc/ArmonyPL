@@ -1,5 +1,5 @@
 /* Sign Up Page Styling */
-.signup-container {
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
   background: linear-gradient(135deg, #0a122a, #223c90);
 }
 
-.signup-card {
+.login-card {
   background: #fff;
   padding: 40px;
   width: 100%;
@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.signup-card h2 {
+.login-card h2 {
   font-size: 2rem;
   font-weight: 600;
   color: #333;
@@ -49,7 +49,7 @@
   outline: none;
 }
 
-.btn-signup {
+.btn-login {
   width: 100%;
   padding: 12px;
   background: linear-gradient(135deg, #0a122a, #223c90);
@@ -61,7 +61,7 @@
   transition: all 0.3s;
 }
 
-.btn-signup:hover {
+.btn-login:hover {
   background: linear-gradient(135deg, #223c90, #0a122a);
 }
 
