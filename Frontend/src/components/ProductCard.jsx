@@ -1,15 +1,16 @@
 import React from "react";
+import "./ProductCard.css";
 
 const ProductCard = ({ name, description, price, image }) => {
-  // Add a fallback for the image if it's missing or undefined
-  const productImage = image || "path/to/default-image.jpg"; // Replace with a valid default image path
-
   return (
-    <div className="card">
-      <img src={productImage} alt={name} className="product-image" />
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <p>${price}</p>
+    <div className="product-card">
+      <img src={image} alt={name} className="product-image" />
+      <div className="product-info">
+        <h3 className="product-name">{name}</h3>
+        <p className="product-description">{description}</p>
+        <p className="product-price">${price}</p>
+        <button className="product-button">Add to Cart</button>
+      </div>
     </div>
   );
 };
