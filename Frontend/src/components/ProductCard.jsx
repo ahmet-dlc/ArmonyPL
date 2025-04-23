@@ -1,7 +1,36 @@
 import React from "react";
+import axios from "axios";
 import "./ProductCard.css";
 
-const ProductCard = ({ name, description, price, image }) => {
+const ProductCard = ({ product }) => {
+  const { name, description, price, image, _id } = product;
+
+  const handleAddToCart = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        alert("Please log in to add items to your cart.");
+        return;
+      }
+
+      await axios.post(
+        "http://localhost:5000/api/cart/item",
+        { productId: _id, quantity: 1 },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      alert("Product added to cart!");
+    } catch (error) {
+      console.error("Failed to add to cart:", error);
+      alert("Something went wrong while adding the item.");
+    }
+  };
+
   return (
     <div className="product-card">
       <img src={image} alt={name} className="product-image" />
@@ -9,7 +38,9 @@ const ProductCard = ({ name, description, price, image }) => {
         <h3 className="product-name">{name}</h3>
         <p className="product-description">{description}</p>
         <p className="product-price">${price}</p>
-        <button className="product-button">Add to Cart</button>
+        <button className="product-button" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );

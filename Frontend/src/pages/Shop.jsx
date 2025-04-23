@@ -22,13 +22,7 @@ const Shop = () => {
       <div className="product-grid">
         {products.length > 0 ? (
           products.map((product) => (
-            <ProductCard
-              key={product._id}
-              name={product.name}
-              description={product.description}
-              price={product.price}
-              image={product.image}
-            />
+            <ProductCard key={product._id} product={product} />
           ))
         ) : (
           <p className="loading-text">Loading products...</p>
