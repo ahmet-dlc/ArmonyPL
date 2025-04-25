@@ -1,23 +1,19 @@
-// src/components/FavoriteCard.jsx
+import "./FavoriteCard.css";
+
 const FavoriteCard = ({ product, onRemove }) => {
-    return (
-      <div className="col-md-4 mb-4">
-        <div className="card h-100">
-          <img src={product.image} className="card-img-top" alt={product.name} />
-          <div className="card-body">
-            <h5 className="card-title">{product.name}</h5>
-            <p className="card-text">${product.price}</p>
-            <button
-              className="btn btn-outline-danger"
-              onClick={() => onRemove(product._id)}
-            >
-              Remove from Favorites
-            </button>
-          </div>
-        </div>
+  return (
+    <div className="favorite-card">
+      <img src={product.image} alt={product.name} />
+      <div className="favorite-card-details">
+        <h5 className="favorite-card-title">{product.name}</h5>
+        <p className="favorite-card-description">{product.description}</p>
+        <p className="favorite-card-price">${product.price}</p>
+        <button onClick={() => onRemove(product._id)}>
+          Remove from Favorites
+        </button>
       </div>
-    );
-  };
-  
-  export default FavoriteCard;
-  
+    </div>
+  );
+};
+
+export default FavoriteCard;

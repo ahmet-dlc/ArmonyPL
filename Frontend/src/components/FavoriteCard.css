@@ -1,0 +1,66 @@
+.favorite-card {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This will center the card horizontally */
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 0 auto; /* This will ensure the card is centered horizontally */
+  }
+  
+  .favorite-card-container {
+    display: flex;
+    justify-content: center; /* Center the favorite cards horizontally */
+    align-items: center; /* Center them vertically if needed */
+    height: 100vh; /* Ensures the container takes up the full viewport height */
+  }
+  
+  
+  .favorite-card img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .favorite-card-details {
+    flex-grow: 1;
+  }
+  
+  .favorite-card-title {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .favorite-card-description {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  
+  .favorite-card-price {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 12px;
+  }
+  
+  .favorite-card button {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .favorite-card button:hover {
+    background-color: #e74c3c;
+  }
+  
