@@ -31,6 +31,32 @@ const ProductCard = ({ product }) => {
     }
   };
 
+  const handleAddToFavorites = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        alert("Please log in to add items to your favorites.");
+        return;
+      }
+
+      await axios.post(
+        "http://localhost:5000/api/favorites",
+        { productId: _id },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      alert("Product added to favorites!");
+    } catch (error) {
+      console.error("Failed to add to favorites:", error);
+      alert("Something went wrong while adding the item.");
+    }
+  };
+
   return (
     <div className="product-card">
       <img src={image} alt={name} className="product-image" />
@@ -40,6 +66,9 @@ const ProductCard = ({ product }) => {
         <p className="product-price">${price}</p>
         <button className="product-button" onClick={handleAddToCart}>
           Add to Cart
+        </button>
+        <button className="product-button" onClick={handleAddToFavorites}>
+          Add to Favorites
         </button>
       </div>
     </div>

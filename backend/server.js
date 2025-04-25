@@ -5,6 +5,8 @@ import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import authRoutes from "./routes/authRoutes.js";  // Import auth routes
 import cartRoutes from "./routes/cartRoutes.js";
+import favoriteRoutes from "./routes/favoriteRoutes.js"; // Import favorite routes
+
 
 dotenv.config();
 connectDB();
@@ -19,6 +21,8 @@ app.use(cors());
 app.use("/api/products", productRoutes);
 app.use("/api/auth", authRoutes);  // Add authentication routes
 app.use("/api/cart", cartRoutes);
+app.use("/api/favorites", favoriteRoutes); // Add the favorites route
+
 
 app.get("/", (req, res) => {
   res.send("API is running...");

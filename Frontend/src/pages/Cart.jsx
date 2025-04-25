@@ -1,6 +1,8 @@
+// frontend/src/pages/Cart.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CartCard from "../components/CartCard";
+import CheckoutPanel from "../components/CheckoutPanel";
 import "./Cart.css";
 
 const Cart = () => {
@@ -45,14 +47,17 @@ const Cart = () => {
   return (
     <div className="cart-page">
       <h1 className="cart-title">Your Shopping Cart</h1>
-      <div className="cart-items-container">
-        {cartItems.length === 0 ? (
-          <p>Your cart is empty</p>
-        ) : (
-          cartItems.map((item) => (
-            <CartCard key={item._id} item={item} onRemove={handleRemove} />
-          ))
-        )}
+      <div className="cart-layout">
+        <CheckoutPanel cartItems={cartItems} />
+        <div className="cart-items-container">
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            cartItems.map((item) => (
+              <CartCard key={item._id} item={item} onRemove={handleRemove} />
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

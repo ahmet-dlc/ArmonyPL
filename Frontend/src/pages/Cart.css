@@ -1,18 +1,86 @@
+/* frontend/src/Cart.css */
+
 .cart-page {
-    padding: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .cart-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-  
-  .cart-items-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+  padding: 50px;
+  max-width: 1800px; /* Increased max-width to give more room */
+  margin: 0 auto;
+}
+
+.cart-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds space between each cart item */
+}
+
+/* The cart-layout now has the checkout panel on the left and the cart items on the right */
+.cart-layout {
+  display: flex;
+  justify-content: space-between; /* Ensure space between the two sections */
+  gap: 70px; /* Increase the gap between cart and checkout */
+  flex-direction: row-reverse; /* Switches the order of the flex items */
+}
+
+.cart-items-container {
+  flex: 0.8; /* Cart items take up 70% of the container width */
+}
+
+.checkout-panel {
+  flex: 0.2; /* Checkout panel takes up 30% of the container width */
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for better visual appeal */
+}
+
+.checkout-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.checkout-section {
+  margin-bottom: 20px; /* Increased space between sections */
+}
+
+.checkout-section label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #000; /* Black text for labels */
+}
+
+.checkout-section select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
+
+.cart-items-container p {
+  margin: 0;
+}

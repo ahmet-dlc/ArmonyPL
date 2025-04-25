@@ -1,0 +1,63 @@
+/* frontend/src/components/CheckoutPanel.css */
+
+.checkout-panel {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    overflow-y: auto;
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-left: -40px; /* Push panel further to the left */
+    position: relative;
+  }
+  
+  .checkout-panel h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #000000;
+  }
+
+  
+.checkout-panel p {
+    color: #000000; /* Ensure <p> tags are black */
+  }
+  
+  .checkout-section {
+    margin-bottom: 20px; /* More spacing between sections */
+  }
+  
+  .checkout-section label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #000000;
+  }
+  
+  .checkout-section select {
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .checkout-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .checkout-button:hover {
+    background-color: #218838;
+  }
+  
