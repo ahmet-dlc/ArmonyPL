@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css"; // Custom CSS file
+import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,7 @@ const Login = () => {
     password: "",
   });
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +35,9 @@ const Login = () => {
       }
 
       localStorage.setItem("token", data.token); // Save JWT token
+      window.dispatchEvent(new Event("storage"));
       alert("Login Successful!");
+      navigate("/");
       // Redirect to home or dashboard after successful login
     } catch (err) {
       setError(err.message);

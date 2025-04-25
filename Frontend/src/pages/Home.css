@@ -9,7 +9,7 @@
     margin-bottom: 40px;
     background-color: #ffffff; /* White background for the brand section */
     padding: 40px;
-    border-radius: 6px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     animation: fadeInUp 1s ease-out;
   }
@@ -87,7 +87,7 @@
   
   .features-title {
     font-size: 2.5rem;
-    color: #2d3436; /* Dark grayish blue */
+    color: #ffffff; /* Dark grayish blue */
     margin-bottom: 30px;
   }
   
