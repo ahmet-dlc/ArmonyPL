@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./ProductCard.css";
+import BASE_URL from "../utils/api";
+
 
 const ProductCard = ({ product }) => {
   const { name, description, price, image, _id } = product;
@@ -15,7 +17,7 @@ const ProductCard = ({ product }) => {
       }
 
       await axios.post(
-        "http://localhost:5000/api/cart/item",
+        `${BASE_URL}/cart/item`,
         { productId: _id, quantity: 1 },
         {
           headers: {
@@ -41,7 +43,7 @@ const ProductCard = ({ product }) => {
       }
 
       await axios.post(
-        "http://localhost:5000/api/favorites",
+        `${BASE_URL}/favorites`,
         { productId: _id },
         {
           headers: {

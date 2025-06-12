@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css"; // Custom CSS file
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../utils/api";
 
 
 const Login = () => {
@@ -21,7 +22,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch(`${BASE_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

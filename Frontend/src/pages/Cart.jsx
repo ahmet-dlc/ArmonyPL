@@ -4,6 +4,7 @@ import axios from "axios";
 import CartCard from "../components/CartCard";
 import CheckoutPanel from "../components/CheckoutPanel";
 import "./Cart.css";
+import BASE_URL from "../utils/api";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -11,7 +12,7 @@ const Cart = () => {
   const fetchCart = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/cart", {
+      const res = await axios.get(`${BASE_URL}/cart`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -26,7 +27,7 @@ const Cart = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.delete(
-        `http://localhost:5000/api/cart/item/${productId}`,
+        `${BASE_URL}/cart/item/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import "./Shop.css";
+import BASE_URL from "../utils/api"; // path may vary
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch(`${BASE_URL}/products`)
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));

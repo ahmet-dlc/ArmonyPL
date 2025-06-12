@@ -3,6 +3,7 @@ import { FaStar, FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './Navbar.css';
+import BASE_URL from "../utils/api";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = () => {
     }
 
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/user", {
+      const res = await axios.get(`${BASE_URL}/auth/user`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

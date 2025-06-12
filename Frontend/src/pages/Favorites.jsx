@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FavoriteCard from "../components/FavoriteCard";
 import "./Cart.css"; // You can keep this or create a separate Favorites.css if needed
+import BASE_URL from "../utils/api";
 
 const Favorites = () => {
   const [favoriteItems, setFavoriteItems] = useState([]);
@@ -9,7 +10,7 @@ const Favorites = () => {
   const fetchFavorites = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/favorites", {
+      const res = await axios.get(`${BASE_URL}/favorites`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -24,7 +25,7 @@ const Favorites = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.delete(
-        `http://localhost:5000/api/favorites/${productId}`,
+        `${BASE_URL}/favorites/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SignUp.css"; // Use the same stylesheet as Login for consistency
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../utils/api";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/signup", {
+      const response = await fetch(`${BASE_URL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
